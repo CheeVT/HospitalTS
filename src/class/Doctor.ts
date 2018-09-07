@@ -1,5 +1,10 @@
-import BloodPressure from './BloodPressure';
-import BloodSugarLevel from './BloodSugarLevel';
+//import BloodPressure from './BloodPressure';
+//import BloodSugarLevel from './BloodSugarLevel';
+
+import {LaboratoryExamination, BloodPressure, BloodSugarLevel} from './LaboratoryExamination';
+
+import {factory} from "./ConfigLog4j";
+const log = factory.getLogger("model.Doctor");
 
 export default class Doctor {
     firstName: string;
@@ -10,12 +15,14 @@ export default class Doctor {
         this.firstName = firstName;
         this.lastName = lastName;
         this.specialty = specialty;
-        console.log('Doctor created: ' + this.firstName + ' ' + this.lastName);
+        //console.log('Doctor created: ' + this.firstName + ' ' + this.lastName);
+        log.info('Doctor created: ' + this.firstName + ' ' + this.lastName);
     }
 
     //Method for make appointment of laboratory examination to patient
     makeAppointment(Patient, Check) {
-        console.log('Patient ' + Patient.firstName + ' is appointed to examination on ' + Check.start);
+        log.info('Patient ' + Patient.firstName + ' is appointed to examination on ' + Check.start);
+        //console.log('Patient ' + Patient.firstName + ' is appointed to examination on ' + Check.start);
     }
 
     //Method for results after examination (need to write a condition to method, to determine)

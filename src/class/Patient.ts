@@ -1,3 +1,6 @@
+import {factory} from "./ConfigLog4j";
+const log = factory.getLogger("model.Patient");
+
 export default class Patient {
     firstName: string;
     lastName: string;
@@ -9,11 +12,11 @@ export default class Patient {
         this.lastName = lastName;
         this.jmbg = jmbg;
         this.medicalRecord = medicalRecord;
-        console.log('Patient created: ' + this.firstName + ' ' + this.lastName);
+        log.info('Patient created: ' + this.firstName + ' ' + this.lastName);
     }
 
     chooseDoctor(Doctor) {
-        console.log('Patient ' + this.firstName + ' ' + this.lastName + ' chose ' + Doctor.firstName + ' ' + Doctor.lastName + ' for his doctor.');
+        log.info('Patient ' + this.firstName + ' ' + this.lastName + ' chose ' + Doctor.firstName + ' ' + Doctor.lastName + ' for his doctor.');
         //console.log('Doktor', Doctor.firstName);
     }
 

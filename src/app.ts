@@ -2,12 +2,11 @@ import {factory} from "./class/ConfigLog4j";
 
 import Doctor from './class/Doctor';
 import Patient from './class/Patient';
-import LaboratoryExamination from './class/LaboratoryExamination';
-import BloodPressure from './class/BloodPressure';
-import BloodSugarLevel from './class/BloodSugarLevel';
+import {LaboratoryExamination, BloodPressure, BloodSugarLevel} from './class/LaboratoryExamination';
+//import BloodPressure from './class/BloodPressure';
+//import BloodSugarLevel from './class/BloodSugarLevel';
 
-const log = factory.getLogger("model.Product");
-const logOther = factory.getLogger("somethingElse");
+const logDoctor = factory.getLogger("model.Doctor");
 
 window.onload = function() {
     let milan = new Doctor('Milan', 'Milic', 'Dental');
@@ -15,9 +14,10 @@ window.onload = function() {
 
     dragan.chooseDoctor(milan);
 
-    log.debug("Casting debug magic spell: " + milan.firstName);
+    //logger.debug("Casting debug magic spell: " + milan.firstName);
+    //logDoctor.info('Doctor created: ' + milan.firstName + ' ' + milan.lastName);
 
-    alert('dsaads');
+    //alert('dsaads');
 
     let pregled1 = new BloodPressure(new Date("February 4, 2016 10:13:00"), '', '', '');
 
